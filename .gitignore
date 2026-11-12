@@ -1,0 +1,13 @@
+
+# Arquivos com chaves e configurações secretas
+.env
+.env.example
+.env.*
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Ambientes virtuais
+.venv/
+venv/

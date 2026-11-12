@@ -1,0 +1,110 @@
+MINHA PESCA.IA - VERSAO COM CONHECIMENTO LOCAL + PESQUISA NA INTERNET
+
+O QUE ESTA VERSAO FAZ
+1. Mantem o chat Gemini que ja estava funcionando.
+2. Mantem a interface verde e a conversa por voz do navegador.
+3. Pesquisa na internet usando DDGS/DuckDuckGo, sem uma chave paga de busca.
+4. Filtra os resultados para domínios institucionais conhecidos (governo, Marinha, INMET, Bahia, universidades e instituições públicas).
+5. Consulta documentos .md e .txt que ficam na pasta conhecimento.
+6. Mostra os links das fontes encontradas abaixo da resposta.
+
+IMPORTANTE SOBRE O ACESSO GRATUITO
+- A busca DDGS usa um serviço público de busca e pode sofrer bloqueios, limites ou indisponibilidade. Não é uma garantia de serviço.
+- A busca não garante que toda informação esteja correta ou atualizada. A assistente deve dizer quando não encontrou confirmação.
+- Esta versão não consulta automaticamente uma API oficial de marés nem fornece previsão meteorológica garantida.
+- Não ative faturamento no Google. A geração de respostas continua usando a chave Gemini já configurada e está sujeita à cota gratuita da sua conta.
+- O Google Search grounding integrado ao Gemini 3.8 Flash não está disponível no nível gratuito; por isso esta versão usa uma busca externa separada.
+
+COMO ATUALIZAR SEM PERDER A CHAVE
+1. Pare o servidor antigo com CTRL+C.
+2. Extraia este ZIP numa pasta NOVA.
+3. Copie a linha GEMINI_API_KEY do arquivo .env antigo.
+4. Crie um arquivo .env na pasta nova e cole somente essa linha.
+5. Dê dois cliques em INSTALAR.bat e aguarde terminar.
+6. Dê dois cliques em INICIAR.bat.
+7. Abra http://127.0.0.1:8000.
+
+COMO ADICIONAR CONHECIMENTO DA COMUNIDADE
+1. Abra a pasta conhecimento.
+2. Coloque nela arquivos de texto .txt ou Markdown .md.
+3. Escreva informações verificadas: nome local da espécie, região, técnica, época, cuidados, fonte e data de revisão.
+4. Reinicie o site para garantir que os novos documentos sejam lidos.
+5. Não coloque dados pessoais de pescadores sem consentimento.
+
+MODELO DE FICHA PARA NOVOS CONHECIMENTOS
+Tema:
+Localidade:
+Informação:
+Cuidados e limitações:
+Fonte:
+Data da consulta:
+Responsável pela revisão:
+
+SEGURANÇA E CONFIABILIDADE
+- Não use esta aplicação como única fonte para decidir sair ao mar.
+- Confirme marés, previsão, avisos, defeso e regras de captura com fontes oficiais.
+- Não siga orientação de coleta, consumo ou comercialização se houver dúvida sanitária ou legal.
+- Em emergência, procure imediatamente os serviços oficiais.
+
+
+NOVA FUNCAO: RESPOSTAS LOCAIS SEM INTERNET/GEMINI
+Algumas perguntas frequentes agora sao respondidas diretamente pelo computador, sem consultar a internet e sem chamar o Gemini. Isso ajuda quando o Google estiver fora do ar.
+Exemplos:
+- defeso do caranguejo-uça (datas de 2026, nunca reutilizar para 2027)
+- defeso de lagosta
+- defeso de robalo/camurim
+- dúvidas gerais sobre defeso
+- receitas simples
+- cidades da Baía de Todos-os-Santos
+- espécies comuns e conservação do pescado
+
+IMPORTANTE:
+- A base inclui referências legais e calendários com data. Períodos podem mudar; não use datas de 2026 como datas de anos futuros.
+- Para perguntas complexas ou informações que mudam, o sistema ainda usa pesquisa e Gemini.
+- Para garantir as respostas locais sem API, a função de FAQ responde antes de tentar acessar internet ou Gemini.
+- Para atualizar a base, edite os arquivos .md na pasta conhecimento.
+- Após atualizar, reinicie o site.
+
+
+AMPLIAÇÃO DA BASE LOCAL — MARÉS, DIREITOS E VIDA DO PESCADOR
+
+Foram adicionados materiais sobre:
+- Marés em Madre de Deus e estações de referência próximas;
+- Seguro-Defeso, requisitos, documentos e canais atuais do MTE;
+- aposentadoria do pescador artesanal e regras diferentes para continuar trabalhando;
+- RGP, REAP, comercialização, segurança e saúde;
+- APMDBA e informações institucionais fornecidas para este projeto.
+
+IMPORTANTE SOBRE AS MARÉS:
+A base local explica como consultar e interpretar as tábuas, mas não deve inventar horários. Para horários e alturas de um dia específico, consulte a tábua oficial da Marinha/CHM do ano correto. A estação Porto de Madre de Deus é a referência principal para Madre de Deus. Uma estação próxima não garante a mesma maré em cada praia, canal ou manguezal. Se a tábua do próximo ano ainda não estiver publicada, a IA deve informar isso.
+
+IMPORTANTE SOBRE DIREITOS:
+As informações previdenciárias e do Seguro-Defeso são orientações gerais. A concessão depende da análise oficial e das regras vigentes. A gestão dos pedidos atuais do Seguro-Defeso passou ao Ministério do Trabalho e Emprego; consultar Carteira de Trabalho Digital/Portal Emprega Brasil. Não prometer aprovação.
+
+IMPORTANTE SOBRE A APMDBA:
+A informação de que José Antônio, conhecido como Zé Tunel, é presidente foi fornecida pelo responsável pelo projeto e deve ser confirmada diretamente com a associação, pois diretorias podem mudar. A frase “melhor associação da Bahia” é uma avaliação/opinião, não uma classificação oficial.
+
+Fontes oficiais principais:
+- Marinha/CHM: https://www.marinha.mil.br/chm/tabuas-de-mare-6
+- MTE — Seguro-Defeso: https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/seguro-desemprego-do-pescador-artesanal
+- Serviço Gov.br: https://www.gov.br/pt-br/servicos/solicitar-seguro-defeso-pescador-artesanal
+- INSS — aposentadoria e retorno ao trabalho: https://www.gov.br/inss/pt-br/noticias/aposentado-por-incapacidade-permanente-perde-o-beneficio-se-voltar-a-trabalhar
+
+Observação técnica:
+Esta ampliação acrescenta conhecimento local consultável pela aplicação. Ela não transforma o programa em uma IA generativa totalmente offline. Perguntas fora das respostas locais ainda podem depender do Gemini e/ou da internet, conforme a configuração existente.
+
+
+REFINAMENTO DE CONVERSA E VOZ
+
+- O reconhecimento de voz agora guarda os trechos reconhecidos durante a fala e só envia uma única pergunta quando a pessoa clica em Encerrar voz.
+- Durante a gravação, o envio por texto fica temporariamente bloqueado para evitar pedidos duplicados.
+- A IA usa identificação de intenção e contexto para evitar responder com uma resposta pronta apenas porque uma palavra apareceu na frase.
+- As respostas passam por limpeza de formatação para remover asteriscos, barras e marcações Markdown antes de aparecerem na tela e antes da leitura em voz alta.
+- A base local foi ampliada com um guia de peixes, crustáceos e moluscos regionais e mais receitas baianas com pescado e mariscos.
+- Perguntas ambíguas devem gerar uma pergunta de esclarecimento, não uma resposta adivinhada.
+
+LIMITES IMPORTANTES
+- O reconhecimento de voz do navegador depende do suporte do Chrome/Edge e pode usar serviços de reconhecimento do próprio navegador.
+- Horários exatos de maré, previsão do tempo, regras atuais e dados variáveis precisam de consulta atualizada; a base local não inventa esses dados.
+- A identificação de espécies por nome popular não é definitiva. Para confirmação, é necessário contexto e, quando possível, foto.
+- A limpeza remove a formatação visual, mas não altera o conteúdo factual da resposta.
